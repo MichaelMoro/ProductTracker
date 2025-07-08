@@ -3,10 +3,11 @@
 <html lang="it">
 <head>
   <meta charset="UTF-8">
-  <title>Esportazione Prodotti con Filtro</title>
+  <title>Prodotti esportati con filtro</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
   <style>
     body { font-family: Arial, sans-serif; background: #f7f7f7; margin: 20px; }
-    .table-container { background: #fff; padding: 15px; border-radius: 8px; box-shadow: 0 2px 8px rgba(0,0,0,0.05); }
+    .table-container { background: #fff; padding: 15px; border-radius: 8px; box-shadow: 0 2px 8px rgba(0,0,0,0.05); overflow-x: auto; }
     table { width: 100%; border-collapse: collapse; background: #fafafa; }
     th, td { padding: 10px 8px; border: 1px solid #ddd; text-align: left; }
     th { background: #007bff; color: #fff; }
@@ -20,10 +21,34 @@
       border-radius: 8px;
       box-sizing: border-box;
     }
+
+    /* --- Responsive styles --- */
+    @media (max-width: 600px) {
+      body {
+        margin: 5px;
+      }
+      .table-container {
+        padding: 5px;
+      }
+      th, td {
+        padding: 8px 4px;
+        font-size: 14px;
+      }
+      table {
+        font-size: 14px;
+      }
+      #filtro {
+        font-size: 0.95em;
+        padding: 8px 4px;
+      }
+      h1 {
+        font-size: 1.2em;
+      }
+    }
   </style>
 </head>
 <body>
-  <h1>Tabella spesa MORO</h1>
+  <h1>Prodotti esportati con filtro</h1>
   <input type="text" id="filtro" placeholder="Cerca per nome, supermercato o dettagli...">
   <div class="table-container">
     <table id="prodotti-table" border="1">
@@ -186,7 +211,6 @@
 </tr></tbody>
   </table>
   </div>
-
   <script>
     // Funzione filtro tabella
     document.getElementById('filtro').addEventListener('input', function() {
@@ -202,4 +226,3 @@
   </script>
 </body>
 </html>
-  
